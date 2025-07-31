@@ -340,7 +340,7 @@ const AllCharts = ({ metrics }) => {
 
   // Decision Pyramid (Slide 7)
   const decisionPyramidData = {
-    labels: ['Estratégico', 'Tático', 'Operacional'],
+    labels: ['Operacional', 'Tático', 'Estratégico'],
     datasets: [
       {
         label: 'Níveis de Decisão',
