@@ -315,7 +315,7 @@ const SlideContainer = ({ metrics }) => {
               <div className="step-number">4</div>
               <div>
                 <p className="font-bold">Revisão Periódica</p>
-                <p>Estabelecer ciclos trimestrais de revisão e atualização dos dashboards e métricas.</p>
+                <p>Estabelecer ciclos de revisão e atualização dos dashboards e métricas.</p>
               </div>
             </div>
           </div>
