@@ -81,7 +81,7 @@ const SlideContainer = ({ metrics }) => {
               </li>
               <li className="kpi-item">
                 <i className="fas fa-exclamation-triangle kpi-icon blue"></i>
-                <span><span className="highlight">Pontos de Identificados:</span> {metrics.total_pontuacao_max - metrics.total_pontuacao_atingida} pontos ({((metrics.total_pontuacao_max - metrics.total_pontuacao_atingida) / metrics.total_pontuacao_max * 100).toFixed(2)}% do total)</span>
+                <span><span className="highlight">Pontos de Melhoria Identificados:</span> {metrics.total_pontuacao_max - metrics.total_pontuacao_atingida} pontos ({((metrics.total_pontuacao_max - metrics.total_pontuacao_atingida) / metrics.total_pontuacao_max * 100).toFixed(2)}% do total)</span>
               </li>
               <li className="kpi-item">
                 <i className="fas fa-trophy kpi-icon blue"></i>
