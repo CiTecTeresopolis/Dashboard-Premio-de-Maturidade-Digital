@@ -57,7 +57,7 @@ const AllCharts = ({ metrics }) => {
         borderWidth: 1
       },
       {
-        label: 'Pontuação Máxima',
+        label: 'Pontuação Requerida',
         data: dimensionMaxScores,
         backgroundColor: '#FBBC04',
         borderColor: '#FBBC04',
