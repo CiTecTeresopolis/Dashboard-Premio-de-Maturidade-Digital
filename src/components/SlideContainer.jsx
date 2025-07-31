@@ -88,7 +88,7 @@ const SlideContainer = ({ metrics }) => {
                 <span><span className="highlight">Dimensões com Performance Máxima:</span> {dimensionsWithMaxPerformance} de {dimensionNames.length} ({((dimensionsWithMaxPerformance / dimensionNames.length) * 100).toFixed(0)}%)</span>
               </li>
               <li className="kpi-item">
-                <i className="fas fa-tasks kpi-icon purple"></i>
+                {/* <i className="fas fa-tasks kpi-icon purple"></i> */}
                 {/* <span><span className="highlight">Indicadores Implementados:</span> 21 de 23 (91,3%)</span> */}
               </li>
             </ul>

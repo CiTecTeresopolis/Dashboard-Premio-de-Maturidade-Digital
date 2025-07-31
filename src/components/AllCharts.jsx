@@ -162,7 +162,7 @@ const AllCharts = ({ metrics }) => {
 
   // Donut Chart (Slide 4)
   const donutData = {
-    labels: ['Pontos Atingidos', 'Pontos Carentes'],
+    labels: ['Pontos Atingidos', 'Pontos Precários'],
     datasets: [{
       data: [metrics.total_pontuacao_atingida, metrics.total_pontuacao_max - metrics.total_pontuacao_atingida],
       backgroundColor: ['#34A853', '#FBBC04'],
