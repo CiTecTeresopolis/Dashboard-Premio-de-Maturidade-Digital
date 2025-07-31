@@ -344,16 +344,16 @@ const AllCharts = ({ metrics }) => {
     datasets: [
       {
         label: 'Níveis de Decisão',
-        data: [3, 2, 1],
+        data: [1, 2, 3],
         backgroundColor: [
-          '#1A73E8',
+          '#FBBC04',
           '#34A853',
-          '#FBBC04'
+          '#1A73E8',
         ],
         borderColor: [
-          '#1A73E8',
+          '#FBBC04',
           '#34A853',
-          '#FBBC04'
+          '#1A73E8',
         ],
         borderWidth: 1
       }
