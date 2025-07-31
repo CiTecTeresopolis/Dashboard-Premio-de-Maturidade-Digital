@@ -39,9 +39,11 @@ export const calculateMetrics = (data) => {
 
   Object.entries(data).forEach(([dimensionName, dimensionData]) => {
     if (!dimensionData || dimensionData.length === 0) return;
-    
+
     let currentDimMax = 0.0;
     let currentDimAtingida = 0.0;
+    let indicadoresImplementados = 0;
+    let indicadoresFaltantes = 0;
 
     // Iterate through rows to calculate sum for current dimension
     // Skip header and total rows
@@ -87,11 +89,20 @@ export const calculateMetrics = (data) => {
       
       currentDimMax += pontuacaoMaxVal;
       currentDimAtingida += pontuacaoAtingidaVal;
+
+      // Contagem de indicadores implementados/faltantes
+      if (row[1] && row[1].toString().toLowerCase().includes('sim')) {
+        indicadoresImplementados += 1;
+      } else {
+        indicadoresFaltantes += 1;
+      }
     });
 
     metrics.dimensoes[dimensionName] = {
       pontuacao_max: currentDimMax,
-      pontuacao_atingida: currentDimAtingida
+      pontuacao_atingida: currentDimAtingida,
+      indicadores_implementados: indicadoresImplementados,
+      indicadores_faltantes: indicadoresFaltantes
     };
     metrics.total_pontuacao_max += currentDimMax;
     metrics.total_pontuacao_atingida += currentDimAtingida;

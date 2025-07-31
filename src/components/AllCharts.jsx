@@ -13,7 +13,6 @@ import {
   LineElement,
   Filler
 } from 'chart.js';
-import { Bar, Doughnut, Radar, Line } from 'react-chartjs-2';
 
 ChartJS.register(
   CategoryScale,
@@ -30,6 +29,7 @@ ChartJS.register(
 );
 
 const AllCharts = ({ metrics }) => {
+  console.log('Metrics:', metrics);
   if (!metrics || !metrics.dimensoes) {
     return <div>Carregue uma planilha para visualizar as métricas</div>;
   }
@@ -45,6 +45,11 @@ const AllCharts = ({ metrics }) => {
     (metrics.dimensoes[name].pontuacao_atingida / metrics.dimensoes[name].pontuacao_max) * 100
   );
 
+  const indicadoresImplementados = dimensionNames.map(name => metrics.dimensoes[name].indicadores_implementados);
+  const indicadoresPendentes = dimensionNames.map(name => metrics.dimensoes[name].indicadores_faltantes
+);
+
+
   // Dimensões Chart (Slide 2)
   const dimensoesChartData = {
     labels: ['1. \nServiços Públicos', '2. \nGovernança', '3. \nInfraestrutura', '4. \nCapacitação'],
@@ -57,7 +62,7 @@ const AllCharts = ({ metrics }) => {
         borderWidth: 1
       },
       {
-        label: 'Pontuação Requerida',
+        label: 'Pontuação Máxima',
         data: dimensionMaxScores,
         backgroundColor: '#FBBC04',
         borderColor: '#FBBC04',
@@ -95,10 +100,10 @@ const AllCharts = ({ metrics }) => {
       label: '% Atingida',
       data: dimensionPercentages,
       backgroundColor: dimensionPercentages.map(p => 
-        p === 100 ? '#1A73E8' : p >= 90 ? '#438ae6ce' : '#5f94da94'
+        p === 100 ? '#34A853' : p >= 90 ? '#1A73E8' : '#FBBC04'
       ),
       borderColor: dimensionPercentages.map(p => 
-        p === 100 ? '#1A73E8' : p >= 90 ? '#438ae6ce' : '#5f94da94'
+        p === 100 ? '#34A853' : p >= 90 ? '#1A73E8' : '#FBBC04'
       ),
       borderWidth: 1
     }]
@@ -162,7 +167,7 @@ const AllCharts = ({ metrics }) => {
 
   // Donut Chart (Slide 4)
   const donutData = {
-    labels: ['Pontos Atingidos', 'Pontos Precários'],
+    labels: ['Pontos Atingidos', 'Pontos Carentes'],
     datasets: [{
       data: [metrics.total_pontuacao_atingida, metrics.total_pontuacao_max - metrics.total_pontuacao_atingida],
       backgroundColor: ['#34A853', '#FBBC04'],
@@ -223,14 +228,14 @@ const AllCharts = ({ metrics }) => {
     datasets: [
       {
         label: 'Implementados',
-        data: dimensionScores.map(score => Math.round(score / 5)), // Estimate indicators
+        data: indicadoresImplementados, // Estimate indicators
         backgroundColor: '#34A853',
         borderColor: '#34A853',
         borderWidth: 1
       },
       {
         label: 'Pendentes',
-        data: dimensionMaxScores.map((max, i) => Math.round((max - dimensionScores[i]) / 5)),
+        data: indicadoresPendentes,
         backgroundColor: '#EA4335',
         borderColor: '#EA4335',
         borderWidth: 1
