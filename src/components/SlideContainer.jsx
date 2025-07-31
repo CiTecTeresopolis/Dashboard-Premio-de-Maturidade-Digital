@@ -76,15 +76,15 @@ const SlideContainer = ({ metrics }) => {
                 <span><span className="highlight">Índice Geral de Maturidade Digital:</span> {metrics.indice_geral_maturidade.toFixed(2)}% ({metrics.total_pontuacao_atingida}/{metrics.total_pontuacao_max} pontos)</span>
               </li>
               <li className="kpi-item">
-                <i className="fas fa-chart-bar kpi-icon green"></i>
+                <i className="fas fa-chart-bar kpi-icon blue"></i>
                 <span><span className="highlight">Taxa de Implementação por Dimensão:</span> Variação de {minPerformance.toFixed(2)}% a {maxPerformance.toFixed(2)}%</span>
               </li>
               <li className="kpi-item">
-                <i className="fas fa-exclamation-triangle kpi-icon yellow"></i>
+                <i className="fas fa-exclamation-triangle kpi-icon blue"></i>
                 <span><span className="highlight">Pontos de Identificados:</span> {metrics.total_pontuacao_max - metrics.total_pontuacao_atingida} pontos ({((metrics.total_pontuacao_max - metrics.total_pontuacao_atingida) / metrics.total_pontuacao_max * 100).toFixed(2)}% do total)</span>
               </li>
               <li className="kpi-item">
-                <i className="fas fa-trophy kpi-icon red"></i>
+                <i className="fas fa-trophy kpi-icon blue"></i>
                 <span><span className="highlight">Dimensões com Performance Máxima:</span> {dimensionsWithMaxPerformance} de {dimensionNames.length} ({((dimensionsWithMaxPerformance / dimensionNames.length) * 100).toFixed(0)}%)</span>
               </li>
               <li className="kpi-item">
