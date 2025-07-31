@@ -95,10 +95,10 @@ const AllCharts = ({ metrics }) => {
       label: '% Atingida',
       data: dimensionPercentages,
       backgroundColor: dimensionPercentages.map(p => 
-        p === 100 ? '#1A73E8' : p >= 90 ? '#4389e6ff' : '#5f94daff'
+        p === 100 ? '#1A73E8' : p >= 90 ? '#438ae6b2' : '#5f94da94'
       ),
       borderColor: dimensionPercentages.map(p => 
-        p === 100 ? '#1A73E8' : p >= 90 ? '#4389e6ff' : '#5f94daff'
+        p === 100 ? '#1A73E8' : p >= 90 ? '#438ae6b2' : '#5f94da94'
       ),
       borderWidth: 1
     }]
